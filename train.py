@@ -24,8 +24,8 @@ if __name__ == '__main__':
 
     args = parse_args()
 
-    train_data = TransformerOilTempDataset('./ETDataset/ETT-small/ETTm1.csv', 10, is_test=False)
-    test_data = TransformerOilTempDataset('./ETDataset/ETT-small/ETTm1.csv', 10, is_test=True)
+    train_data = TransformerOilTempDataset('Dataset/ETT-small/ETTm1.csv', 10, is_test=False)
+    test_data = TransformerOilTempDataset('Dataset/ETT-small/ETTm1.csv', 10, is_test=True)
     print_step = 10
 
     train_loader = DataLoader(train_data, batch_size=256, shuffle=True, num_workers=4)
