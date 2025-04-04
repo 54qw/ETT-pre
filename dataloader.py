@@ -50,13 +50,13 @@ class TransformerOilTempDataset(Dataset):
         return torch.from_numpy(self.data[idx]).to(torch.float32), torch.FloatTensor([self.label[idx]])
 
 if __name__ == '__main__':
-    dataset = TransformerOilTempDataset('./ETDataset/ETT-small/ETTm1.csv', window=10, is_test=False)
+    dataset = TransformerOilTempDataset('Dataset/ETT-small/ETTm1.csv', window=10, is_test=False)
     print(f"Dataset size: {len(dataset)}")  # 确保数据量正常
     print(f"Sample input shape: {dataset[0][0].shape}")  # 确保输入 shape 正确
     print(f"Sample output shape: {dataset[0][1].shape}")  # 确保标签 shape 正确
 
 
-    # df = pd.read_csv("./ETDataset/ETT-small/ETTm1.csv", parse_dates=["date"])
+    # df = pd.read_csv("./Dataset/ETT-small/ETTm1.csv", parse_dates=["date"])
     # # 设置时间索引
     # df.set_index("date", inplace=True)
     # plt.figure(figsize=(12, 6))
